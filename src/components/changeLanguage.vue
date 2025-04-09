@@ -15,9 +15,9 @@ function changeLanguage(lang) {
   <div class="flex items-center gap-4 bg-black p-2 rounded-lg">
     <button
       @click="changeLanguage('pt')"
-      :class="[
+      :class="[ 
         'transition-transform hover:scale-105 cursor-pointer rounded-full',
-        selectedLanguage === 'pt' ? 'ring-2 ring-white' : ''
+        selectedLanguage.value === 'pt' ? 'ring-2 ring-white' : '' 
       ]"
     >
       <img
@@ -29,9 +29,9 @@ function changeLanguage(lang) {
 
     <button
       @click="changeLanguage('en')"
-      :class="[
+      :class="[ 
         'transition-transform hover:scale-105 cursor-pointer rounded-full',
-        selectedLanguage === 'en' ? 'ring-2 ring-white' : ''
+        selectedLanguage.value === 'en' ? 'ring-2 ring-white' : '' 
       ]"
     >
       <img
@@ -43,9 +43,9 @@ function changeLanguage(lang) {
 
     <button
       @click="changeLanguage('es')"
-      :class="[
+      :class="[ 
         'transition-transform hover:scale-105 cursor-pointer rounded-full',
-        selectedLanguage === 'es' ? 'ring-2 ring-white' : ''
+        selectedLanguage.value === 'es' ? 'ring-2 ring-white' : '' 
       ]"
     >
       <img

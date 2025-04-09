@@ -1,11 +1,8 @@
-<script setup>
-import Home from './components/Home.vue';
-</script>
+<script setup></script>
 
 <template>
-  <div class='bg-yellow-300 h-screen'>
-    <Home />
+  <div class="h-full bg-yellow-300">
+    <router-view />
   </div>
   
 </template>
-
