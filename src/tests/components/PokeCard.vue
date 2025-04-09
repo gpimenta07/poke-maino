@@ -1,34 +1,16 @@
 <script setup>
 import { onMounted, ref, computed } from "vue";
 import axios from "axios";
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
+
 
 const pokeList = ref([]);
-const isLoading = ref(true); // estado de carregamento
-const search = ref(""); // filtro por nome
-const searchId = ref(""); // filtro por ID
-const searchType = ref(""); // filtro por tipo
-const searchSpecies = ref(""); // filtro por espécie
-
-const typeTranslations = {
-  normal: "normal",
-  fire: "fogo",
-  water: "água",
-  electric: "elétrico",
-  grass: "grama",
-  ice: "gelo",
-  fighting: "lutador",
-  poison: "veneno",
-  ground: "terra",
-  flying: "voador",
-  psychic: "psíquico",
-  bug: "inseto",
-  rock: "pedra",
-  ghost: "fantasma",
-  dragon: "dragão",
-  dark: "noturno",
-  steel: "aço",
-  fairy: "fada",
-};
+const isLoading = ref(true);
+const search = ref("");
+const searchId = ref("");
+const searchType = ref("");
+const searchSpecies = ref("");
 
 onMounted(async () => {
   try {
@@ -52,9 +34,7 @@ onMounted(async () => {
           id: res.data.id,
           name: res.data.name,
           image: res.data.sprites.front_default,
-          types: res.data.types.map(
-            (t) => typeTranslations[t.type.name] || t.type.name
-          ),
+          types: res.data.types.map((t) => t.type.name), // sem tradução
           species: genus?.genus || "Desconhecido",
         };
       })
@@ -64,7 +44,7 @@ onMounted(async () => {
   } catch (error) {
     console.error("Erro ao buscar os pokémons:", error);
   } finally {
-    isLoading.value = false; // Finaliza o loading
+    isLoading.value = false;
   }
 });
 
@@ -77,13 +57,16 @@ const filteredPokemons = computed(() => {
       searchId.value === "" || pokemon.id.toString().includes(searchId.value);
     const typeMatch =
       searchType.value === "" ||
-      pokemon.types.includes(searchType.value.toLowerCase());
+      pokemon.types.some((type) =>
+        type.toLowerCase().includes(searchType.value.toLowerCase())
+      );
     const speciesMatch =
       searchSpecies.value === "" ||
       pokemon.species.toLowerCase().includes(searchSpecies.value.toLowerCase());
     return nameMatch && idMatch && typeMatch && speciesMatch;
   });
 });
+
 </script>
 
 <template>
@@ -97,25 +80,25 @@ const filteredPokemons = computed(() => {
       <input
         v-model="search"
         type="text"
-        placeholder="Pesquisar por nome..."
+       :placeholder="t('searchName')"
         class="w-full sm:w-1/4 px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       <input
         v-model="searchId"
         type="number"
-        placeholder="Pesquisar por ID..."
+        :placeholder="t('searchId')"
         class="w-full sm:w-1/4 px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       <input
         v-model="searchType"
         type="text"
-        placeholder="Pesquisar por tipo (ex: fogo)..."
+        :placeholder="t('searchType')"
         class="w-full sm:w-1/4 px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       <input
         v-model="searchSpecies"
         type="text"
-        placeholder="Pesquisar por espécie (ex: Seed...)"
+        :placeholder="t('searchSpecies')"
         class="w-full sm:w-1/4 px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
     </div>
@@ -131,15 +114,16 @@ const filteredPokemons = computed(() => {
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
     >
       <div
+        data-aos-anchor-placement="center-bottom"
         v-for="pokemon in filteredPokemons"
         :key="pokemon.id"
-        class="bg-white rounded-2xl shadow-md p-4 flex flex-col items-center hover:scale-105 transition-transform duration-200"
+        class="bg-white rounded-2xl shadow-2xl p-4 flex flex-col items-center"
       >
         <img :src="pokemon.image" :alt="pokemon.name" class="w-26 h-26 mb-4" />
         <h2 class="text-lg font-semibold capitalize">{{ pokemon.name }}</h2>
         <p class="text-gray-500 mb-1">ID: {{ pokemon.id }}</p>
         <p class="text-gray-400 text-sm italic mb-2">
-          Espécie: {{ pokemon.species }}
+          {{ t("species") }}: {{ pokemon.species }}
         </p>
 
         <div class="flex flex-wrap justify-center gap-2 mb-2">
@@ -148,24 +132,24 @@ const filteredPokemons = computed(() => {
             :key="type"
             class="px-2 py-1 text-xs rounded-full text-white capitalize"
             :class="{
-              'bg-yellow-500': type === 'elétrico',
-              'bg-red-500': type === 'fogo',
-              'bg-blue-500': type === 'água',
-              'bg-green-500': type === 'grama',
+              'bg-yellow-500': type === 'electric',
+              'bg-red-500': type === 'fire',
+              'bg-blue-500': type === 'water',
+              'bg-green-500': type === 'grass',
               'bg-gray-500': type === 'normal',
-              'bg-purple-600': type === 'veneno',
-              'bg-pink-500': type === 'fada',
-              'bg-stone-500': type === 'pedra',
-              'bg-orange-500': type === 'lutador',
-              'bg-cyan-500': type === 'gelo',
-              'bg-lime-500': type === 'inseto',
-              'bg-indigo-600': type === 'fantasma',
-              'bg-slate-600': type === 'noturno',
-              'bg-amber-600': type === 'terra',
-              'bg-sky-600': type === 'voador',
-              'bg-violet-600': type === 'psíquico',
-              'bg-neutral-600': type === 'aço',
-              'bg-emerald-600': type === 'dragão',
+              'bg-purple-600': type === 'poison',
+              'bg-pink-500': type === 'fairy',
+              'bg-stone-500': type === 'rock',
+              'bg-orange-500': type === 'fighting',
+              'bg-cyan-500': type === 'ice',
+              'bg-lime-500': type === 'bug',
+              'bg-indigo-600': type === 'ghost',
+              'bg-slate-600': type === 'dark',
+              'bg-amber-600': type === 'ground',
+              'bg-sky-600': type === 'flying',
+              'bg-violet-600': type === 'psychic',
+              'bg-neutral-600': type === 'steel',
+              'bg-emerald-600': type === 'dragon',
             }"
           >
             {{ type }}
@@ -174,9 +158,9 @@ const filteredPokemons = computed(() => {
 
         <router-link
           :to="`/pokemon/${pokemon.name}`"
-          class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 cursor-pointer transition-colors"
+          class="bg-blue-500 text-white px-5 py-1.5 mt-3 rounded hover:bg-blue-600 cursor-pointer transition-colors"
         >
-          Detalhes
+        {{ t("details") }}
         </router-link>
       </div>
     </div>

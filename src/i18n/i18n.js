@@ -4,6 +4,7 @@ import en from './en.json'
 import es from './es.json'
 
 const i18n = createI18n({
+  legacy: false, // Adicionado para usar Composition API
   locale: 'pt', // padrão
   fallbackLocale: 'en',
   messages: {

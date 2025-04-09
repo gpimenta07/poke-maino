@@ -1,6 +1,54 @@
 {
-    "hello": "Olá",
-    "home": "Início",
-    "about": "Sobre"
-  }
-  
+  "home": "Início",
+  "about": "Sobre",
+  "loading": "Carregando Pokémons...",
+  "id": "ID",
+  "species": "Espécie",
+  "details": "Detalhes",
+  "searchName": "Pesquisar por nome...",
+  "searchId": "Pesquisar por ID...",
+  "searchType": "Pesquisar por tipo (ex: fire)...",
+  "searchSpecies": "Pesquisar por espécie (ex: Seed...)",
+  "types": {
+    "normal": "Normal",
+    "fire": "Fogo",
+    "water": "Água",
+    "electric": "Elétrico",
+    "grass": "Grama",
+    "ice": "Gelo",
+    "fighting": "Lutador",
+    "poison": "Veneno",
+    "ground": "Terra",
+    "flying": "Voador",
+    "psychic": "Psíquico",
+    "bug": "Inseto",
+    "rock": "Pedra",
+    "ghost": "Fantasma",
+    "dragon": "Dragão",
+    "dark": "Noturno",
+    "steel": "Aço",
+    "fairy": "Fada"
+  },
+  "aboutPage": {
+    "title": "Sobre o Projeto",
+    "description": "Este projeto foi desenvolvido por {name} como parte do processo seletivo da Mainô. É uma Pokédex interativa que consome dados da PokéAPI, permitindo explorar detalhes como sprites, ataques, evoluções e jogos em que cada Pokémon aparece.",
+    "createdBy": "Desenvolvido por Gabriel Pimenta 💻",
+    "linkedin": "Meu LinkedIn",
+    "back": "Voltar para Home"
+  },
+  "title": "Pokédex",
+  "search_name": "Pesquisar por nome...",
+  "search_id": "Pesquisar por ID...",
+  "search_type": "Pesquisar por tipo (ex: fogo)...",
+  "search_species": "Pesquisar por espécie (ex: Seed...)",
+  "unknown_species": "Desconhecido",
+
+  "back": "← Voltar",
+  "sprites": "Sprites",
+  "moves": "Movimentos",
+  "evolutions": "Evoluções",
+  "noEvolutions": "Este Pokémon não possui evoluções.",
+  "games": "Aparece nos Jogos",
+  "notFound": "Pokémon não encontrado.",
+  "pokedexTitle": "Pokédex"
+}

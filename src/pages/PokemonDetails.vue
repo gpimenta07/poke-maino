@@ -1,8 +1,11 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
+import { useI18n } from "vue-i18n"; // i18n
+import Header from "../tests/components/Header.vue";
 import axios from "axios";
 
+const { t } = useI18n(); // i18n
 const route = useRoute();
 const pokemonName = route.params.name;
 const pokemon = ref(null);
@@ -74,16 +77,18 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="p-6 max-w-4xl mx-auto">
+  <Header></Header>
+  <div data-aos="fade-up"
+  data-aos-anchor-placement="bottom-bottom" class="p-6 max-w-4xl mx-auto">
     <router-link
       to="/"
       class="text-blue-500 underline mb-4 block hover:text-blue-700 transition"
     >
-      ← Voltar
+      {{ t('back') }}
     </router-link>
 
     <div v-if="loading" class="text-center text-xl font-semibold animate-pulse">
-      Carregando...
+      {{ t('loading') }}
     </div>
 
     <div v-else-if="!loading && pokemon?.name" class="space-y-8">
@@ -101,7 +106,7 @@ onMounted(async () => {
 
       <!-- Sprites -->
       <div>
-        <h2 class="text-2xl font-semibold mb-2">Sprites</h2>
+        <h2 class="text-2xl font-semibold mb-2">{{ t('sprites') }}</h2>
         <div class="flex flex-wrap gap-4 mb-4">
           <img
             v-for="(url, key) in flatSprites"
@@ -115,7 +120,7 @@ onMounted(async () => {
 
       <!-- Moves -->
       <div>
-        <h2 class="text-2xl font-semibold mb-2">Movimentos</h2>
+        <h2 class="text-2xl font-semibold mb-2">{{ t('moves') }}</h2>
         <ul class="list-disc list-inside mb-4 columns-2 sm:columns-3">
           <li
             v-for="move in pokemon.moves"
@@ -129,12 +134,12 @@ onMounted(async () => {
 
       <!-- Evoluções -->
       <div>
-        <h2 class="text-2xl font-semibold mb-4">Evoluções</h2>
+        <h2 class="text-2xl font-semibold mb-4">{{ t('evolutions') }}</h2>
         <div
           v-if="evolutionDetails.length <= 1"
           class="text-gray-600 italic animate-fadeIn"
         >
-          Este Pokémon não possui evoluções.
+          {{ t('noEvolutions') }}
         </div>
         <div v-else class="flex flex-wrap justify-center gap-6 animate-fadeIn">
           <div
@@ -154,7 +159,7 @@ onMounted(async () => {
 
       <!-- Games -->
       <div>
-        <h2 class="text-2xl font-semibold mb-2">Aparece nos Jogos</h2>
+        <h2 class="text-2xl font-semibold mb-2">{{ t('games') }}</h2>
         <ul class="list-disc list-inside capitalize">
           <li
             v-for="game in pokemon.game_indices"
@@ -168,10 +173,11 @@ onMounted(async () => {
     </div>
 
     <div v-else class="text-center text-red-500 text-lg">
-      Pokémon não encontrado.
+      {{ t('notFound') }}
     </div>
   </div>
 </template>
+
 
 <style scoped>
 @keyframes fadeIn {

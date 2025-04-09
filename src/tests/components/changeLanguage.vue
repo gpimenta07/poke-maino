@@ -1,9 +1,14 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { locale } = useI18n()
 const selectedLanguage = ref(locale.value)
+
+// Mantém o valor sincronizado caso mude fora do componente
+watch(locale, (newLocale) => {
+  selectedLanguage.value = newLocale
+})
 
 function changeLanguage(lang) {
   selectedLanguage.value = lang
@@ -15,9 +20,9 @@ function changeLanguage(lang) {
   <div class="flex items-center gap-4 bg-black p-2 rounded-lg">
     <button
       @click="changeLanguage('pt')"
-      :class="[ 
-        'transition-transform hover:scale-105 cursor-pointer rounded-full',
-        selectedLanguage.value === 'pt' ? 'ring-2 ring-white' : '' 
+      :class="[
+        'transition-transform hover:scale-105 cursor-pointer rounded-full p-1',
+        selectedLanguage === 'pt' ? 'ring-2 ring-white' : ''
       ]"
     >
       <img
@@ -29,9 +34,9 @@ function changeLanguage(lang) {
 
     <button
       @click="changeLanguage('en')"
-      :class="[ 
-        'transition-transform hover:scale-105 cursor-pointer rounded-full',
-        selectedLanguage.value === 'en' ? 'ring-2 ring-white' : '' 
+      :class="[
+        'transition-transform hover:scale-105 cursor-pointer rounded-full p-1',
+        selectedLanguage === 'en' ? 'ring-2 ring-white' : ''
       ]"
     >
       <img
@@ -43,9 +48,9 @@ function changeLanguage(lang) {
 
     <button
       @click="changeLanguage('es')"
-      :class="[ 
-        'transition-transform hover:scale-105 cursor-pointer rounded-full',
-        selectedLanguage.value === 'es' ? 'ring-2 ring-white' : '' 
+      :class="[
+        'transition-transform hover:scale-105 cursor-pointer rounded-full p-1',
+        selectedLanguage === 'es' ? 'ring-2 ring-white' : ''
       ]"
     >
       <img
