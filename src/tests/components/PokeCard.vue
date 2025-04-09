@@ -158,7 +158,7 @@ const filteredPokemons = computed(() => {
 
         <router-link
           :to="`/pokemon/${pokemon.name}`"
-          class="bg-blue-500 text-white px-5 py-1.5 mt-3 rounded hover:bg-blue-600 cursor-pointer transition-colors"
+          class="bg-blue-500 text-white px-8 py-2 mt-4 rounded hover:bg-blue-600 cursor-pointer transition-colors"
         >
         {{ t("details") }}
         </router-link>

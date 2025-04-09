@@ -78,8 +78,7 @@ onMounted(async () => {
 
 <template>
   <Header></Header>
-  <div data-aos="fade-up"
-  data-aos-anchor-placement="bottom-bottom" class="p-6 max-w-4xl mx-auto">
+  <div class="p-6 max-w-4xl mx-auto">
     <router-link
       to="/"
       class="text-blue-500 underline mb-4 block hover:text-blue-700 transition"
