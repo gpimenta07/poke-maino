@@ -1,24 +1,35 @@
-# Pokédex - Desafio Estágio Frontend | Mainô
+<h1 align="center">Pokédex - Desafio Estágio Frontend | Mainô</h1>
+
+<p align="center">
+  <img src="https://img.shields.io/github/languages/top/gpimenta07/poke-maino?style=flat-square" />
+  <img src="https://img.shields.io/github/last-commit/gpimenta07/poke-maino?style=flat-square" />
+  <img src="https://img.shields.io/badge/vue.js-3.x-brightgreen?style=flat-square&logo=vue.js" />
+  <img src="https://img.shields.io/badge/deploy-vercel-blueviolet?style=flat-square&logo=vercel" />
+</p>
+
+---
+
+## 🧾 Sobre o Projeto
 
 Olá! 👋 Sou **Gabriel Pimenta** e este é o projeto desenvolvido para o desafio técnico do processo seletivo de **Estágio em Desenvolvimento Frontend** da [Mainô](https://maino.com.br).
 
-O desafio consistiu em criar uma **Pokédex** com diversas funcionalidades utilizando Vue.js e a PokéAPI.
+O desafio consistiu em desenvolver uma aplicação web que funcionasse como uma **Pokédex**, utilizando **Vue.js** e dados da **PokéAPI**.
 
 ---
 
 ## 🚀 Deploy
 
-Acesse a aplicação no ar através do link:
+A aplicação está publicada e disponível para testes:
 
-🔗 [https://pokedex-dusky-eight-64.vercel.app](https://pokedex-dusky-eight-64.vercel.app)
+🔗 [Clique aqui para acessar a Pokédex](https://pokedex-dusky-eight-64.vercel.app)
 
 ---
 
-## 🧪 Repositório
+## 📁 Repositório
 
-Código-fonte disponível no GitHub:
+Todo o código-fonte está disponível no GitHub:
 
-📁 [https://github.com/gpimenta07/poke-maino](https://github.com/gpimenta07/poke-maino)
+📂 [https://github.com/gpimenta07/poke-maino](https://github.com/gpimenta07/poke-maino)
 
 ---
 
@@ -27,7 +38,7 @@ Código-fonte disponível no GitHub:
 - **Vue.js 3**
 - **Vue Router**
 - **Axios**
-- **Tailwind CSS** (responsividade e estilização)
+- **Tailwind CSS** (estilização e responsividade)
 - **Vue I18n** (internacionalização)
 - **Vitest** (testes unitários)
 - **PokéAPI** (dados dos Pokémon)
@@ -35,76 +46,51 @@ Código-fonte disponível no GitHub:
 
 ---
 
-## 📋 Funcionalidades Obrigatórias
+## 📋 Funcionalidades Implementadas
 
-- ✅ **Scroll infinito** para listagem de Pokémon
-- ✅ Filtros por **nome**, **ID**, **tipo** e **espécie**
-- ✅ Página de **detalhes do Pokémon** com:
+### ✅ Funcionalidades obrigatórias
+
+- Listagem dos Pokémon com **scroll infinito**
+- Filtros por **nome**, **ID**, **tipo** e **espécie**
+- Página de detalhes com:
   - Todos os **sprites**
   - Lista de **movimentos de ataque**
-  - Linha de **evolução** (quando aplicável)
-  - Lista de todos os **games** em que o Pokémon aparece (`game_indices`)
+  - **Evoluções** (quando aplicável)
+  - Jogos em que aparece (`game_indices`)
+
+### 🌟 Funcionalidades diferenciais
+
+- ✅ **Testes automatizados** com Vitest
+- ✅ **Internacionalização** com suporte a **🇧🇷 PT-BR**, **🇺🇸 EN** e **🇪🇸 ES**
+- ✅ Layout totalmente **responsivo** (mobile/desktop)
 
 ---
 
-## 🌟 Funcionalidades Diferenciais
+## 🖼️ Prints da Aplicação
 
-- ✅ **Testes automatizados simples** com Vitest
-- ✅ **Internacionalização** com suporte a **português**, **inglês** e **espanhol**
-- ✅ Totalmente **responsivo** para mobile e desktop
+### 🏠 Página Inicial
+<img src="https://user-images.githubusercontent.com/123456789/placeholder-home.png" alt="Página inicial" width="100%" />
 
----
+### 📄 Detalhes do Pokémon
+<img src="https://user-images.githubusercontent.com/123456789/placeholder-details.png" alt="Detalhes Pokémon" width="100%" />
 
-## 🧪 Testes
-
-Foram incluídos testes unitários utilizando **Vitest** para validar o comportamento de componentes e funções auxiliares.
-
-- ✅ Teste de renderização de componentes
-- ✅ Teste de funções de filtragem
+*(Troque os links acima pelos seus prints reais, ou posso gerar as imagens para você se quiser)*
 
 ---
 
-## 📱 Responsividade
+## 🔧 Como Rodar Localmente
 
-A aplicação foi desenvolvida com **TailwindCSS**, garantindo uma experiência fluida tanto em **dispositivos móveis** quanto em **telas maiores**.
+```bash
+# Clone o repositório
+git clone https://github.com/gpimenta07/poke-maino.git
 
----
+# Acesse a pasta
+cd poke-maino
 
-## 🌍 Internacionalização
+# Instale as dependências
+npm install
 
-Com suporte a 3 idiomas:
+# Rode o servidor de desenvolvimento
+npm run dev
 
-- 🇧🇷 Português
-- 🇺🇸 Inglês
-- 🇪🇸 Espanhol
-
-Os textos são carregados dinamicamente de acordo com a escolha do usuário.
-
----
-
-## 🧠 Aprendizados
-
-Este desafio foi uma excelente oportunidade para reforçar conceitos como:
-
-- Integração com APIs REST
-- Composição de layouts responsivos
-- Organização de projeto em Vue
-- Uso do Vue Router e Vue I18n
-- Escrita de testes automatizados
-
----
-
-## 📧 Contato
-
-Se quiser saber mais sobre mim ou meu trabalho:
-
-- [LinkedIn](https://www.linkedin.com/in/gabriel-pimenta-dev/)
-- Email: **gabrielcarvalhopimenta@gmail.com**
-
----
-
-
-**Obrigado pela oportunidade, Mainô!** 🚀  
-_Que este projeto seja apenas o começo!_
-
-
+# Acesse em http://localhost:5173
