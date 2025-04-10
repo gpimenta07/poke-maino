@@ -5,6 +5,7 @@
   "id": "ID",
   "species": "Espécie",
   "details": "Detalhes",
+  "filter": "* Filtros devem ser utilizados em inglês",
   "searchName": "Pesquisar por nome...",
   "searchId": "Pesquisar por ID...",
   "searchType": "Pesquisar por tipo (ex: fire)...",

@@ -83,11 +83,11 @@ onMounted(async () => {
       to="/"
       class="text-blue-500 underline mb-4 block hover:text-blue-700 transition"
     >
-      {{ t('back') }}
+      {{ t("back") }}
     </router-link>
 
     <div v-if="loading" class="text-center text-xl font-semibold animate-pulse">
-      {{ t('loading') }}
+      {{ t("loading") }}
     </div>
 
     <div v-else-if="!loading && pokemon?.name" class="space-y-8">
@@ -105,7 +105,7 @@ onMounted(async () => {
 
       <!-- Sprites -->
       <div>
-        <h2 class="text-2xl font-semibold mb-2">{{ t('sprites') }}</h2>
+        <h2 class="text-2xl font-semibold mb-2">{{ t("sprites") }}</h2>
         <div class="flex flex-wrap gap-4 mb-4">
           <img
             v-for="(url, key) in flatSprites"
@@ -119,7 +119,7 @@ onMounted(async () => {
 
       <!-- Moves -->
       <div>
-        <h2 class="text-2xl font-semibold mb-2">{{ t('moves') }}</h2>
+        <h2 class="text-2xl font-semibold mb-2">{{ t("moves") }}</h2>
         <ul class="list-disc list-inside mb-4 columns-2 sm:columns-3">
           <li
             v-for="move in pokemon.moves"
@@ -133,12 +133,12 @@ onMounted(async () => {
 
       <!-- Evoluções -->
       <div>
-        <h2 class="text-2xl font-semibold mb-4">{{ t('evolutions') }}</h2>
+        <h2 class="text-2xl font-semibold mb-4">{{ t("evolutions") }}</h2>
         <div
           v-if="evolutionDetails.length <= 1"
           class="text-gray-600 italic animate-fadeIn"
         >
-          {{ t('noEvolutions') }}
+          {{ t("noEvolutions") }}
         </div>
         <div v-else class="flex flex-wrap justify-center gap-6 animate-fadeIn">
           <div
@@ -158,7 +158,7 @@ onMounted(async () => {
 
       <!-- Games -->
       <div>
-        <h2 class="text-2xl font-semibold mb-2">{{ t('games') }}</h2>
+        <h2 class="text-2xl font-semibold mb-2">{{ t("games") }}</h2>
         <ul class="list-disc list-inside capitalize">
           <li
             v-for="game in pokemon.game_indices"
@@ -172,11 +172,10 @@ onMounted(async () => {
     </div>
 
     <div v-else class="text-center text-red-500 text-lg">
-      {{ t('notFound') }}
+      {{ t("notFound") }}
     </div>
   </div>
 </template>
-
 
 <style scoped>
 @keyframes fadeIn {

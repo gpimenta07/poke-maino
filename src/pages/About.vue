@@ -1,37 +1,43 @@
 <script setup>
-import { useI18n } from 'vue-i18n'
-import Header from '../tests/components/Header.vue';
+import { useI18n } from "vue-i18n";
+import Header from "../tests/components/Header.vue";
 
-const { t } = useI18n()
+const { t } = useI18n();
 </script>
 
 <template>
-    <Header></Header>
-    
-  <div data-aos="fade-left"
-     data-aos-anchor="#example-anchor"
-     data-aos-offset="500"
-     data-aos-duration="1000"
+  <Header></Header>
+
+  <div
+    data-aos="fade-left"
+    data-aos-anchor="#example-anchor"
+    data-aos-offset="500"
+    data-aos-duration="1000"
     class="min-h-screen flex flex-col items-center justify-center bg-yellow-300 text-black px-4 py-10"
   >
-  <img class="w-48 hover:scale-110 duration-800 cursor-pointer mb-5 border-4 rounded-4xl" src="../assets/pessoa.png" alt="">
+    <img
+      class="w-48 hover:scale-110 duration-800 cursor-pointer mb-5 border-4 rounded-4xl"
+      src="../assets/pessoa.png"
+      alt=""
+    />
     <div class="max-w-3xl w-full text-center space-y-6">
       <h1 class="text-4xl font-extrabold tracking-tight">
-        {{ t('aboutPage.title') }}
+        {{ t("aboutPage.title") }}
       </h1>
 
       <p class="text-lg leading-relaxed">
-        {{ t('aboutPage.description', { name: 'Gabriel Pimenta' }) }}
+        {{ t("aboutPage.description", { name: "Gabriel Pimenta" }) }}
         <a
           href="https://pokeapi.co/"
           target="_blank"
           class="underline font-semibold hover:text-gray-800 transition"
-        >PokéAPI</a>.
+          >PokéAPI</a
+        >.
       </p>
 
       <footer class="pt-6 border-t border-black">
         <p class="mb-4 font-medium">
-          {{ t('aboutPage.createdBy') }}
+          {{ t("aboutPage.createdBy") }}
         </p>
         <a
           href="https://www.linkedin.com/in/gpimenta07"
@@ -53,7 +59,7 @@ const { t } = useI18n()
               4.36 2.01 4.36 4.5v6.1z"
             />
           </svg>
-          {{ t('aboutPage.linkedin') }}
+          {{ t("aboutPage.linkedin") }}
         </a>
       </footer>
 
@@ -64,7 +70,7 @@ const { t } = useI18n()
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
           <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
         </svg>
-        {{ t('aboutPage.back') }}
+        {{ t("aboutPage.back") }}
       </router-link>
     </div>
   </div>

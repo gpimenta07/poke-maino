@@ -1,6 +1,6 @@
-import { mount } from '@vue/test-utils'
-import PokeCard from '../components/PokeCard.vue'
-import { createI18n } from 'vue-i18n'
+import { mount } from "@vue/test-utils";
+import PokeCard from "../components/PokeCard.vue";
+import { createI18n } from "vue-i18n";
 
 // Configuração de tradução mockada
 const messages = {
@@ -34,7 +34,7 @@ const messages = {
       dragon: "Dragon",
       dark: "Dark",
       steel: "Steel",
-      fairy: "Fairy"
+      fairy: "Fairy",
     },
     back: "← Back",
     sprites: "Sprites",
@@ -42,26 +42,26 @@ const messages = {
     evolutions: "Evolutions",
     noEvolutions: "This Pokémon has no evolutions.",
     games: "Appears in Games",
-    notFound: "Pokémon not found."
-  }
-}
+    notFound: "Pokémon not found.",
+  },
+};
 
 const i18n = createI18n({
   legacy: false,
-  locale: 'en',
-  fallbackLocale: 'en',
-  messages
-})
+  locale: "en",
+  fallbackLocale: "en",
+  messages,
+});
 
-describe('PokeCard.vue', () => {
-  it('renderiza corretamente após carregar os pokémons', async () => {
+describe("PokeCard.vue", () => {
+  it("renderiza corretamente após carregar os pokémons", async () => {
     const wrapper = mount(PokeCard, {
       global: {
         plugins: [i18n],
-        stubs: ['router-link'] // Aqui é onde o aviso é resolvido
-      }
-    })
+        stubs: ["router-link"], // Aqui é onde o aviso é resolvido
+      },
+    });
 
-    expect(wrapper.exists()).toBe(true)
-  })
-})
+    expect(wrapper.exists()).toBe(true);
+  });
+});

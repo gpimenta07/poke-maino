@@ -7,8 +7,10 @@ import PokeCard from "../tests/components/PokeCard.vue";
   <Header data-aos="zoom-in"></Header>
 
   <div>
-    <PokeCard data-aos="fade-down"
-     data-aos-easing="linear"
-     data-aos-duration="1500" />
+    <PokeCard
+      data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="1500"
+    />
   </div>
 </template>

@@ -1,4 +1,3 @@
-// src/main.js
 import { createApp } from "vue";
 import "./style.css";
 import App from "./App.vue";
@@ -14,6 +13,6 @@ const pinia = createPinia();
 app.use(pinia);
 
 app.use(router);
-app.use(i18n); 
+app.use(i18n);
 
 app.mount("#app");

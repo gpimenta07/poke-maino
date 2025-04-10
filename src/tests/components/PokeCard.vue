@@ -4,7 +4,6 @@ import axios from "axios";
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 
-
 const pokeList = ref([]);
 const isLoading = ref(true);
 const search = ref("");
@@ -66,21 +65,20 @@ const filteredPokemons = computed(() => {
     return nameMatch && idMatch && typeMatch && speciesMatch;
   });
 });
-
 </script>
 
 <template>
   <div class="p-6">
     <h1 class="text-3xl font-extrabold italic mb-6 text-center">Pokédex</h1>
 
-    <!-- Filtros -->
+    <!-- Input Filtros -->
     <div
       class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-center mb-6 max-w-5xl mx-auto"
     >
       <input
         v-model="search"
         type="text"
-       :placeholder="t('searchName')"
+        :placeholder="t('searchName')"
         class="w-full sm:w-1/4 px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       <input
@@ -101,11 +99,19 @@ const filteredPokemons = computed(() => {
         :placeholder="t('searchSpecies')"
         class="w-full sm:w-1/4 px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
+      
     </div>
+    <div class="flex items-center justify-center m-5">
+      <h2>{{ t("filter") }}</h2>
+    </div>
+    
 
     <!-- Mensagem de carregando -->
-    <div v-if="isLoading" class="text-center text-xl font-semibold text-gray-600 my-10">
-      Carregando Pokémons...
+    <div
+      v-if="isLoading"
+      class="text-center text-xl font-semibold text-gray-600 my-10"
+    >
+      {{ t("loading") }}
     </div>
 
     <!-- Lista de Pokémons -->
@@ -160,7 +166,7 @@ const filteredPokemons = computed(() => {
           :to="`/pokemon/${pokemon.name}`"
           class="bg-blue-500 text-white px-8 py-2 mt-4 rounded hover:bg-blue-600 cursor-pointer transition-colors"
         >
-        {{ t("details") }}
+          {{ t("details") }}
         </router-link>
       </div>
     </div>
