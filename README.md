@@ -67,7 +67,7 @@ Todo o código-fonte está disponível no GitHub:
 ### 🧠 Considerações Técnicas
 Durante o desenvolvimento, considerei a implementação de um gerenciador de estado global como Pinia (ou Vuex). No entanto, devido à escala do projeto e à forma como os dados foram estruturados e reutilizados, optei por um gerenciamento de estado local e componentizado, mantendo a aplicação simples, eficiente e de fácil manutenção.
 
-Essa decisão foi tomada com base em boas práticas de engenharia de software, priorizando clareza e organização do código, sem adicionar complexidade desnecessária ao projeto.
+Essa decisão foi tomada priorizando clareza e organização do código, sem adicionar complexidade desnecessária ao projeto.
 
 
 ---
