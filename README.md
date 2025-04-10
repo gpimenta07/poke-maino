@@ -66,18 +66,6 @@ Todo o código-fonte está disponível no GitHub:
 
 ---
 
-## 🖼️ Prints da Aplicação
-
-### 🏠 Página Inicial
-<img src="https://user-images.githubusercontent.com/123456789/placeholder-home.png" alt="Página inicial" width="100%" />
-
-### 📄 Detalhes do Pokémon
-<img src="https://user-images.githubusercontent.com/123456789/placeholder-details.png" alt="Detalhes Pokémon" width="100%" />
-
-*(Troque os links acima pelos seus prints reais, ou posso gerar as imagens para você se quiser)*
-
----
-
 ## 🔧 Como Rodar Localmente
 
 ```bash
