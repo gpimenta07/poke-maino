@@ -55,13 +55,6 @@ Código-fonte disponível no GitHub:
 
 ---
 
-## 📦 Estrutura do Projeto
-
-src/ ├── assets/ # Imagens e ícones ├── components/ # Componentes reutilizáveis ├── locales/ # Arquivos de tradução ├── router/ # Configuração de rotas ├── store/ # Estado global com Pinia ├── views/ # Páginas da aplicação ├── App.vue # Componente raiz └── main.js # Inicialização da aplicação
-
-
----
-
 ## 🧪 Testes
 
 Foram incluídos testes unitários utilizando **Vitest** para validar o comportamento de componentes e funções auxiliares.
